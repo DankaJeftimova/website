@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competition Achievements & Hobbies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 for dark background */
+            padding-top: 7rem; /* Increased padding to ensure navigation links don't hide section headers */
+        }
+        .portfolio-card {
+            padding: 1.5rem; /* Increased padding slightly for detail cards */
+            background-color: #1e293b; /* Slate 800 */
+            border-radius: 0.75rem; /* Rounded corners */
+            transition: all 0.2s ease-in-out;
+        }
+        .portfolio-card:hover {
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            background-color: #334155; /* Slate 700 */
+        }
+        /* Custom classes for section grouping (used in the volunteering/projects section) */
+        .erasmus-group { border-color: #ec4899; } /* Pink-500 */
+        .summit-group { border-color: #10b981; } /* Green-500 */
+    </style>
+</head>
+<body class="p-8">
+    <br>
+    <br>
+    <br>
+ <a href="./home.html" class="inline-flex items-center text-lg font-medium text-slate-300 hover:text-violet-400 transition duration-300">
+                &larr; Home
+            </a>
+    <!-- Navigation Bar (Fixed at Top) -->
+    <header class="fixed top-0 left-0 right-0 z-10 bg-slate-900/90 backdrop-blur-sm shadow-xl border-b border-slate-700">
+        <nav class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center justify-between h-12">
+                <div class="flex items-center">
+                    <span class="text-2xl font-extrabold text-violet-400">Achievements</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#competitions" class="text-slate-300 hover:text-violet-300 transition duration-150 font-medium">Competitions</a>
+                    <!-- Updated text to "Volunteering" -->
+                    <a href="#volunteering" class="text-slate-300 hover:text-pink-300 transition duration-150 font-medium whitespace-nowrap">Volunteering</a>
+                    <a href="#hobbies" class="text-slate-300 hover:text-blue-300 transition duration-150 font-medium">Hobbies</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Navigation Bar -->
+
+
+    <!-- COMPETITIONS SECTION (Existing) -->
+    <section id="competitions" class="max-w-4xl mx-auto section-padding mb-16">
+        <h2 class="text-4xl font-extrabold text-violet-400 border-b border-slate-700 pb-4 mb-8">Competitions</h2>
+        <div class="text-slate-300">
+            <p class="mb-8 leading-relaxed">A record of my success in national and international contests, demonstrating problem-solving skills and dedication to informatics and mathematics.</p>
+            
+            <!-- Mathematics Achievements -->
+            <h3 class="text-2xl font-semibold text-violet-300 mt-8 mb-6 border-b border-slate-800 pb-2">Mathematics Achievements 🧮</h3>
+            <div class="flex flex-col space-y-4">
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">Macedonian Math Olympiad 2024</h4>
+                    <p class="text-slate-400 font-medium">Participation - National Level</p>
+                </div>
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">National Math Competition</h4>
+                    <p class="text-slate-400 font-medium">Second National Award (2024)</p>
+                </div>
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">City Math Competition</h4>
+                    <p class="text-slate-400 font-medium">First City Award (2024)</p>
+                </div>
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">Regional Math Competition</h4>
+                    <p class="text-slate-400 font-medium">Second Regional Award (2023)</p>
+                </div>
+            </div>
+
+            <!-- Programming & Informatics Achievements -->
+            <h3 class="text-2xl font-semibold text-violet-300 mt-10 mb-6 border-b border-slate-800 pb-2">Programming & Informatics Achievements 💻</h3>
+            <div class="flex flex-col space-y-4">
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">National Programming Competition</h4>
+                    <p class="text-slate-400 font-medium">Third National Award (2025)</p>
+                </div>
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">Regional Programming Competition</h4>
+                    <p class="text-slate-400 font-medium">Third Regional Award (2025)</p>
+                </div>
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">National Programming Competition</h4>
+                    <p class="text-slate-400 font-medium">Third National Award (2024)</p>
+                </div>
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">Regional Programming Competition</h4>
+                    <p class="text-slate-400 font-medium">Third Regional Award (2024)</p>
+                </div>
+                <div class="portfolio-card border-l-4 border-violet-500">
+                    <h4 class="text-xl font-semibold text-violet-400 mb-1">Girls' Team Selection Competition</h4>
+                    <p class="text-slate-400 font-medium">Participation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNATIONAL PROJECTS & TECH SUMMITS SECTION (Volunteering) -->
+    <section id="volunteering" class="max-w-4xl mx-auto section-padding mb-16">
+        <h2 class="text-4xl font-extrabold text-violet-400 border-b border-slate-700 pb-4 mb-8">International Projects & Tech Summits</h2>
+        <div class="text-slate-300 space-y-12">
+            <p class="mb-6 leading-relaxed">This section highlights my commitment to intercultural learning through international projects (Erasmus+) and active participation in high-level technology conferences, demonstrating teamwork, leadership, and a passion for social and technological progress.</p>
+            
+            <!-- SUB-SECTION: Erasmus+ Projects -->
+            <h3 class="text-2xl font-semibold text-pink-400 mt-8 mb-6 border-b border-slate-800 pb-2">International Youth Exchanges (Erasmus+) 🌍</h3>
+
+            <!-- Youth Exchange "Digitally United" -->
+            <div class="portfolio-card border-l-4 erasmus-group shadow-lg">
+                <h4 class="text-2xl font-bold text-pink-300 mb-3">Youth Exchange "Digitally United" 🌐</h4>
+                <div class="md:flex md:space-x-8 text-sm mb-4 border-b border-slate-700 pb-3">
+                    <p><span class="font-semibold text-violet-400">Where:</span> Brebu, Romania</p>
+                    <p><span class="font-semibold text-violet-400">When:</span> 04.12.2024 - 13.12.2024</p>
+                    <p><span class="font-semibold text-violet-400">Certification:</span> Youthpass</p>
+                </div>
+
+                <p class="text-slate-400 mb-4 text-justify"><span class="font-semibold text-violet-300">Project Focus:</span> Empowering youth through virtual tools, AI, and technology, fostering media literacy and digital responsibility through interactive workshops, debates, and a collaborative video project.</p>
+                
+                <p class="text-slate-400 mb-2 text-justify"><span class="font-semibold text-violet-300">My Role & Impact:</span> Represented my country and actively participated in workshops on responsible AI use. I contributed to the final video project using Kdenlive for video editing and created educational content using Kahoot and Canva. I significantly developed all 8 Erasmus competences, practicing team building, English communication, and compromise.</p>
+            </div>
+
+            <!-- Youth Exchange "The Art of Games" -->
+            <div class="portfolio-card border-l-4 erasmus-group shadow-lg">
+                <h4 class="text-2xl font-bold text-pink-300 mb-3">Youth Exchange "The Art of Games" 🎨🎮</h4>
+                <div class="md:flex md:space-x-8 text-sm mb-4 border-b border-slate-700 pb-3">
+                    <p><span class="font-semibold text-violet-400">Where:</span> Placzewo, Poland</p>
+                    <p><span class="font-semibold text-violet-400">When:</span> 13.06.2025 - 22.06.2025</p>
+                    <p><span class="font-semibold text-violet-400">Certification:</span> Youthpass</p>
+                </div>
+
+                <p class="text-slate-400 mb-4 text-justify"><span class="font-semibold text-violet-300">Project Focus:</span> A cultural exchange focused on the intersection of art and games, involving interactive workshops, programming games using AI tools, and sharing cultural perspectives.</p>
+                
+                <p class="text-slate-400 mb-2 text-justify"><span class="font-semibold text-violet-300">My Role & Impact:</span> Shared my country's culture and knowledge while learning about friendship and team dynamics across six nations. I gained hands-on experience with game programming concepts and further strengthened my digital, personal, social, and communication competences in an international, multicultural environment.</p>
+            </div>
+            
+            <!-- SUB-SECTION: AI Tech Summit -->
+            <h3 class="text-2xl font-semibold text-green-400 mt-8 mb-6 border-b border-slate-800 pb-2">Technology & Innovation Summits 💡</h3>
+
+            <!-- AI Tech Summit Skopje 2025 (Generated Summary) -->
+            <div class="portfolio-card border-l-4 summit-group shadow-lg">
+                <h4 class="text-2xl font-bold text-green-300 mb-3">AI Tech Summit Skopje 2025 🤖</h4>
+                <div class="md:flex md:space-x-8 text-sm mb-4 border-b border-slate-700 pb-3">
+                    <p><span class="font-semibold text-violet-400">Where:</span> Skopje, North Macedonia</p>
+                    <p><span class="font-semibold text-violet-400">When:</span> 30.09.2025 - 01.10.2025</p>
+                    <p><span class="font-semibold text-violet-400">Format:</span> Regional Tech Conference</p>
+                </div>
+
+                <p class="text-slate-400 mb-4 text-justify"><span class="font-semibold text-violet-300">Summary:</span> The AI Tech Summit is the region's leading event on artificial intelligence, bringing together global experts and industry leaders to discuss practical applications of AI in fields like healthcare, finance, gaming, and bioengineering, emphasizing measurable results and ethical implementation.</p>
+                
+                <p class="text-slate-400 mb-2 text-justify"><span class="font-semibold text-violet-300">My Experience:</span> I volunteered on the logistics team for this regional tech summit. My responsibilities included managing registration, coordinating speaker schedules, and ensuring the smooth flow of equipment and materials across different event halls. This experience was invaluable for developing my organizational skills, time management, and ability to troubleshoot under pressure in a professional, fast-paced environment. </div>
+
+        </div>
+    </section>
+
+    <!-- HOBBIES SECTION (New) -->
+    <section id="hobbies" class="max-w-4xl mx-auto section-padding mb-16">
+        <h2 class="text-4xl font-extrabold text-violet-400 border-b border-slate-700 pb-4 mb-8">Personal Interests & Hobbies</h2>
+        <div class="text-slate-300 space-y-8">
+            <p class="mb-6 leading-relaxed">Outside of academics and competitions, I enjoy creative and reflective activities that help me relax, focus, and develop patience.</p>
+
+            <!-- Reading (Main) -->
+            <div class="portfolio-card border-l-4 border-blue-400">
+                <h3 class="text-2xl font-semibold text-blue-300 mb-2">Reading</h3>
+                <p class="text-slate-400 leading-relaxed">Reading is my primary way to unwind. I enjoy a wide range of genres, with a particular interest in **classic literature** and **science fiction**. Reading helps me improve my vocabulary, concentration, and ability to process complex narratives and ideas, which is valuable for both creative writing and problem-solving.</p>
+            </div>
+
+            <!-- Embroidery -->
+            <div class="portfolio-card border-l-4 border-yellow-400">
+                <h3 class="text-2xl font-semibold text-yellow-300 mb-2">Embroidery</h3>
+                <p class="text-slate-400 leading-relaxed">This hands-on hobby requires detailed focus and patience. I enjoy planning out complex patterns and seeing them come to life through careful, repetitive stitching. It's a satisfying contrast to the digital world of programming.</p>
+            </div>
+
+            <!-- Crochet -->
+            <div class="portfolio-card border-l-4 border-red-400">
+                <h3 class="text-2xl font-semibold text-red-300 mb-2">Crochet</h3>
+                <p class="text-slate-400 leading-relaxed">Crochet is a great exercise in pattern recognition. I enjoy the process of quickly creating textured items, from small amigurumi figures to larger functional pieces, applying basic, repeatable logic to produce varied results.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
