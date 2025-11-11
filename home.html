@@ -4,33 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danka Jeftimova - Student Portfolio</title>
-    <!-- Load Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* Custom Styles & Configuration */
         :root {
             scroll-behavior: smooth;
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* slate-900 - Dark Background */
-            color: #f1f5f9; /* slate-100 - Light Text */
+            background-color: #0f172a; 
+            color: #f1f5f9; 
         }
         .section-padding {
             padding: 5rem 0;
             min-height: 80vh; 
         }
-        /* Style for active nav link (ScrollSpy functionality) */
         .nav-link.active {
-            color: #a78bfa; /* violet-400 */
+            color: #a78bfa; 
             border-bottom: 2px solid #a78bfa;
             font-weight: 600;
         }
-        /* Utility for Mobile Menu Transition */
+
         .mobile-menu {
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
             overflow: hidden;
@@ -38,12 +34,11 @@
             opacity: 0;
         }
         .mobile-menu.open {
-            max-height: 500px; /* Arbitrary large value */
+            max-height: 500px; 
             opacity: 1;
         }
         .portfolio-card {
-             /* Card style for consistency */
-             background-color: #1e293b; /* slate-800 */
+             background-color: #1e293b; 
              padding: 2rem;
              border-radius: 1rem;
              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -52,32 +47,28 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+
     <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-sm shadow-lg border-b border-slate-700">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="flex items-center justify-between h-16 sm:h-20">
-                <!-- Logo/Name -->
                 <a href="#home" class="text-xl sm:text-2xl font-extrabold tracking-tight text-violet-400">Danka Jeftimova</a>
 
-                <!-- Desktop Navigation -->
+                
                 <div class="hidden md:flex space-x-6 lg:space-x-8 text-lg">
-                    <!-- Internal Links -->
                     <a href="#home" class="nav-link py-1 text-slate-300 hover:text-violet-400 transition duration-300" data-target="home">Home</a>
                     <a href="#education" class="nav-link py-1 text-slate-300 hover:text-violet-400 transition duration-300" data-target="education">Education</a>
                     <a href="#projects" class="nav-link py-1 text-slate-300 hover:text-violet-400 transition duration-300" data-target="projects">Projects & Skills</a>
                     <a href="#certifications" class="nav-link py-1 text-slate-300 hover:text-violet-400 transition duration-300" data-target="certifications">Certifications</a>
-                    <!-- External Links (to the new page) -->
                     <a href="./interests.html" class="nav-link py-1 text-slate-300 hover:text-violet-400 transition duration-300" data-target="competitions">Interests and Achievements</a>
                      </div>
 
-                <!-- Mobile Menu Button (Hamburger) -->
+
                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-violet-400">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </nav>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="mobile-menu md:hidden bg-slate-800 shadow-xl">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white" data-target="home">Home</a>
@@ -91,10 +82,8 @@
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- 1. Home / Hero Section -->
         <section id="home" class="section-padding flex flex-col lg:flex-row items-center gap-12 pt-24 lg:pt-32">
-            
-            <!-- Left Column: Text Content -->
+
             <div class="lg:w-2/3">
                 <p class="text-violet-400 font-semibold uppercase tracking-widest mb-2">Student & Developer</p>
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-3">
@@ -107,43 +96,18 @@
                 <p class="text-lg text-slate-300 mb-6 leading-relaxed">
                     An ambitious student from North Macedonia with excellent academic performance, numerous competition achievements, and a passion for programming. I am constantly investing in my education with the goal of contributing to the improvement of the society I live in.
                 </p>
-              
-                  <!-- Social Icons -->
-            <div class="flex justify-left space-x-6 mb-6">
-                <!-- GitHub Icon Link -->
-                <!-- IMPORTANT: Update the 'href' with your actual GitHub profile link! -->
-                <a href="https://github.com/DankaJeftimova" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400 transition duration-300 transform hover:scale-110">
-                    <!-- GitHub SVG Icon (The Octocat) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
-                        <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.04-1.61-4.04-1.61-.546-1.387-1.332-1.756-1.332-1.756-1.09-.745.08-.73.08-.73 1.205.084 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.33-5.466-5.93 0-1.31.468-2.38.468-3.22-.132-.3-.574-1.52.126-3.175 0 0 1.05-.32 3.44.123 1.0-.275 2.05-.412 3.08-.417 1.03.005 2.08.142 3.08.417 2.39-1.385 3.44-.123 3.44-.123.702 1.655.26 2.875.13 3.175.48.84.76 1.91.76 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.805 1.09.805 2.22 0 1.605-.015 2.895-.015 3.28 0 .32.22.69.825.57 4.766-1.587 8.203-6.084 8.203-11.385C24 5.373 18.627 0 12 0z"/>
-                    </svg>
-                </a>
+    
+          
                 
-                <!-- LinkedIn Icon Link -->
-                <!-- IMPORTANT: Update the 'href' with your actual LinkedIn profile link! -->
-                <a href="https://linkedin.com/in/YourProfile" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400 transition duration-300 transform hover:scale-110">
-                    <!-- LinkedIn SVG Icon (The 'in' box) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                        <rect x="2" y="9" width="4" height="12"/>
-                        <circle cx="4" cy="4" r="2" />
-                    </svg>
-                </a>
-
-                <!-- Email Icon Link (Optional but useful) -->
-                <!-- IMPORTANT: Update the 'href' with your actual email address! -->
-                <a href="mailto:danka.i.jeftimova@gmail.com" class="text-slate-400 hover:text-violet-400 transition duration-300 transform hover:scale-110">
-                    <!-- Email SVG Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.83 1.83 0 0 1-2.06 0L2 7"/></svg>
-                </a>
-            </div>
+                
+            
+              
+               
               
 
-                <!-- Call to Action -->
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-xl shadow-lg text-white bg-violet-600 hover:bg-violet-700 transition duration-300 transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-violet-500/50">
                         Explore Skills & Projects
-                        <!-- Icon Placeholder (lucide-react equivalent: ArrowRight) -->
                         <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                     <a href="./interests.html" class="inline-flex items-center justify-center px-6 py-3 border border-violet-600 text-base font-bold rounded-xl shadow-lg text-violet-400 hover:bg-violet-900 transition duration-300 focus:outline-none focus:ring-4 focus:ring-violet-500/50">
@@ -152,7 +116,6 @@
                 </div>
             </div>
             
-            <!-- Right Column: Photo Placeholder -->
             <div class="lg:w-1/3 flex justify-center lg:justify-end mt-10 lg:mt-0">
                 <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full shadow-2xl overflow-hidden border-4 border-violet-600 bg-slate-700 flex items-center justify-center">
                     <img src="./me.png" 
@@ -163,13 +126,11 @@
             </div>
         </section>
 
-        <!-- 2. Education Section (UPDATED) -->
         <section id="education" class="py-12 px-6 sm:px-10 bg-slate-800 rounded-xl my-12">
             <h2 class="text-4xl font-bold text-violet-400 border-b border-slate-700 pb-4 mb-8">Education</h2>
             
             <div class="space-y-6">
-                
-                <!-- Card 1: High School - Current Education (Less Intrusive Highlight) -->
+        
                 <div class="portfolio-card border border-violet-600/50 bg-slate-800/70">
                     <h3 class="text-2xl font-semibold mb-2">Mathematical - Computer Science High School (M-CS HS)</h3>
                     <p class="text-violet-300 mb-4">Skopje, North Macedonia | 2022 - Present</p>
@@ -183,7 +144,6 @@
                     </ul>
                 </div>
 
-                <!-- Card 2: Elementary School - Foundational Years -->
                 <div class="portfolio-card bg-slate-700/50">
                     <h3 class="text-2xl font-semibold mb-2">Sts. Cyrilus and Methodius Elementary School</h3>
                     <p class="text-violet-300 mb-4">Kocani, North Macedonia | 2013 - 2022</p>
@@ -197,7 +157,6 @@
                     </ul>
                 </div>
 
-                 <!-- Card 3: Student Residence - Personal Growth -->
                 <div class="portfolio-card bg-slate-700/50">
                     <h3 class="text-2xl font-semibold mb-2">State High School Student Residence</h3>
                     <p class="text-violet-300 mb-4">Skopje, North Macedonia | 2022 - Present</p>
@@ -208,24 +167,21 @@
             </div>
         </section>
 
-        <!-- 3. Projects & Skills Section -->
         <section id="projects" class="section-padding" style="padding-top: 3rem;">
             <h2 class="text-4xl font-bold text-violet-400 border-b border-slate-700 pb-4 mb-8">Projects & Key Skills</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
-                <!-- Left/Center Column (2/3 width on desktop): View Full Portfolio Link - Vertically Centered -->
                 <div class="lg:col-span-2 flex flex-col justify-center h-full"> 
                     <p class="text-lg text-slate-300 mb-6">Explore the full details, code structure, and media for my most significant projects, including my Harvard CS50P Final Project and my KMeans++ Recommendation System.</p>
                     
-                    <!-- View Portfolio Card/Link -->
-                    <a href="./portfolio.html" class="portfolio-card block border border-violet-600 text-violet-400 hover:bg-violet-900 transition duration-300 text-center p-8 transform hover:scale-[1.01]">
+                  <a href="./portfolio.html" class="portfolio-card block border border-violet-600 text-violet-400 hover:bg-violet-900 transition duration-300 text-center p-8 transform hover:scale-[1.01]">
                         <h3 class="text-3xl font-extrabold mb-2">View Full Project Portfolio &rarr;</h3>
                         <p class="text-lg opacity-90 text-slate-300">Click here to see detailed project descriptions and media.</p>
                     </a>
                 </div>
 
-                <!-- Right Column (1/3 width on desktop): My Skills -->
+                
                 <div class="lg:col-span-1">
                     <div class="portfolio-card bg-slate-800 h-full border-t-4 border-violet-500">
                         <h3 class="text-xl font-bold text-violet-400 mb-4">My Key Skills</h3>
@@ -252,7 +208,7 @@
             </div>
         </section>
 
-        <!-- 4. Certifications Section (UPDATED) -->
+        
         <section id="certifications" class="py-12 px-6 sm:px-10 bg-slate-800 rounded-xl my-12">
             <h2 class="text-4xl font-bold text-violet-400 border-b border-slate-700 pb-4 mb-8">Certifications & Major Achievements</h2>
             <div class="text-slate-300 space-y-4">
@@ -268,14 +224,12 @@
                         <p class="text-sm text-slate-400">Kode With Klossy</p>
                     </div>
                     
-                    <!-- UPDATED: Thesis entry is now concise and points to the danka_projects.html page -->
-                    <a href="./portfolio.html" class="block">
-                        <div class="portfolio-card bg-slate-700/50 hover:bg-slate-700 transition duration-300 transform hover:scale-[1.01] cursor-pointer">
+                    <div class="block">
+                        <div class="portfolio-card bg-slate-700/50 ">
                             <h3 class="text-xl font-semibold text-violet-300 mb-1">Thesis: "Biocomputers and DNA Programming"</h3>
                             <p class="text-sm text-slate-400">Accepted for Student Science Conference (Ohrid, North Macedonia)</p>
-                            <p class="text-sm text-violet-400 mt-2 font-bold">See full details and Python simulation in the Projects section &rarr;</p>
+                            </div>
                         </div>
-                    </a>
                     
                     <div class="portfolio-card bg-slate-700/50">
                         <h3 class="text-xl font-semibold text-violet-300 mb-1">GDHT 2024</h3>
@@ -287,19 +241,18 @@
         
     </main>
 
-    <!-- Footer -->
+    
     <footer class="bg-slate-900 border-t border-slate-700 py-10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-sm text-slate-500">&copy; <span id="current-year"></span> Danka Jeftimova. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Interactivity -->
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // 1. Mobile Menu Toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -309,9 +262,7 @@
                 mobileMenu.classList.toggle('open');
             });
 
-            // Close mobile menu and smooth scroll when a link is clicked
             document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                // Only apply scroll/close logic to internal links
                 if (link.href.includes('#')) {
                     link.addEventListener('click', () => {
                         mobileMenu.classList.remove('open');
@@ -320,7 +271,6 @@
                 }
             });
 
-            // 2. Scroll Spy Navigation Highlight for INTERNAL links only
             const sections = document.querySelectorAll('#home, #education, #projects, #certifications');
             const navLinks = document.querySelectorAll('.nav-link');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -363,7 +313,7 @@
                 observer.observe(section);
             });
             
-             // Manually set 'Home' active on initial load
+
              document.querySelector('.nav-link[data-target="home"]').classList.add('active');
              document.querySelector('.mobile-nav-link[data-target="home"]').classList.add('bg-violet-700', 'text-white');
              document.querySelector('.mobile-nav-link[data-target="home"]').classList.remove('text-slate-300');

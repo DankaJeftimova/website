@@ -1,253 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danka Jeftimova - Technical Projects</title>
-    <!-- Load Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* slate-900 */
-            color: #f1f5f9; /* slate-100 */
-            min-height: 100vh;
-        }
-        .project-card {
-             background-color: #1e293b; /* slate-800 */
-             border-radius: 1rem;
-             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-             cursor: pointer;
-        }
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        /* Modal Backdrop */
-        .modal-backdrop {
-            background-color: rgba(0, 0, 0, 0.75);
-            transition: opacity 0.3s ease-in-out;
-        }
-        .modal-container {
-            max-height: 90vh;
-            overflow-y: auto;
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
-        .modal-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        .media-placeholder {
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #334155; /* slate-700 */
-            border-radius: 0.5rem;
-            color: #94a3b8; /* slate-400 */
-            text-align: center;
-            padding: 1rem;
-            font-style: italic;
-        }
-        /* Specific style to make media placeholder content fill its container when using a grid */
-        .media-grid-container {
-            height: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danka Jeftimova - Technical Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      min-height: 100vh;
+    }
+    .project-card {
+      background-color: #1e293b;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.75);
+      transition: opacity 0.3s ease-in-out;
+    }
+    .modal-container {
+      max-height: 90vh;
+      overflow-y: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .modal-container::-webkit-scrollbar {
+      display: none;
+    }
+    .media-placeholder {
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #334155;
+      border-radius: 0.5rem;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1rem;
+      font-style: italic;
+    }
+    .media-grid-container {
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header class="bg-slate-900 shadow-xl border-b border-slate-700 py-6">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center">
-            <h1 class="text-3xl font-extrabold tracking-tight text-violet-400 mb-4 sm:mb-0">
-                Technical Projects
-            </h1>
-            <a href="./home.html" class="inline-flex items-center text-lg font-medium text-slate-300 hover:text-violet-400 transition duration-300">
-                &larr; Home
-            </a>
-        </div>
-    </header>
-
-    <!-- Main Content: Project Grid -->
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <p class="text-xl text-slate-300 mb-10 text-center max-w-3xl mx-auto">
-            A collection of my favorite projects, demonstrating practical skills in programming, data science, and design.
-        </p>
-        
-        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Cards will be injected here by JavaScript -->
-        </div>
-
-    </main>
-
-    <!-- Project Detail Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" onclick="closeModal(event)">
-        <div class="bg-slate-900 rounded-xl shadow-2xl w-full max-w-4xl p-6 md:p-8 modal-container border border-violet-700" onclick="event.stopPropagation()">
-            <div class="flex justify-between items-start mb-6">
-                <h2 id="modal-title" class="text-3xl font-bold text-violet-400">Project Title</h2>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-white transition">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-
-            <!-- Modal Content Grid: Media (1 col) and Description (2 cols) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                 <!-- Media Placeholder Column (md:col-span-1) -->
-                <div class="md:col-span-1">
-                    <div id="modal-media" class="media-placeholder media-grid-container">
-                        Media Placeholder (Video/Photo)
-                    </div>
-                </div>
-
-                <!-- Description Column (md:col-span-2) -->
-                <div class="md:col-span-2">
-                    <p class="text-sm font-semibold text-slate-400 mb-2">Full Description:</p>
-                    <div id="modal-content" class="text-slate-300 leading-relaxed text-base">
-                        <!-- Content will be injected here -->
-                    </div>
-                </div>
-            </div>
-
-             <div class="pt-4 border-t border-slate-700 text-center">
-                <button onclick="closeModal()" class="px-6 py-3 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition duration-300 shadow-md">
-                    Close Details
-                </button>
-            </div>
-        </div>
+  <header class="bg-slate-900 shadow-xl border-b border-slate-700 py-6">
+    <div
+      class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center"
+    >
+      <h1 class="text-3xl font-extrabold tracking-tight text-violet-400 mb-4 sm:mb-0">
+        Technical Projects
+      </h1>
+      <a
+        href="./home.html"
+        class="inline-flex items-center text-lg font-medium text-slate-300 hover:text-violet-400 transition duration-300"
+      >
+        &larr; Home
+      </a>
     </div>
+  </header>
 
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <p
+      class="text-xl text-slate-300 mb-10 text-center max-w-3xl mx-auto"
+    >
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-700 py-10 mt-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm text-slate-500">&copy; <span id="current-year-proj"></span> Danka Jeftimova. Technical Projects.</p>
+    </p>
+
+    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </main>
+
+  <div
+    id="project-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4"
+    onclick="closeModal(event)"
+  >
+    <div
+      class="bg-slate-900 rounded-xl shadow-2xl w-full max-w-4xl p-6 md:p-8 modal-container border border-violet-700"
+      onclick="event.stopPropagation()"
+    >
+      <div class="flex justify-between items-start mb-6">
+        <h2 id="modal-title" class="text-3xl font-bold text-violet-400">
+          Project Title
+        </h2>
+        <button
+          onclick="closeModal()"
+          class="text-slate-400 hover:text-white transition"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path></svg
+          >
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="md:col-span-1">
+          <div id="modal-media" class="media-placeholder media-grid-container"></div>
         </div>
-    </footer>
 
-    <!-- JavaScript for Interactivity and Data Handling -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('current-year-proj').textContent = new Date().getFullYear();
-            renderProjects();
-        });
+        <div class="md:col-span-2">
+          <p class="text-sm font-semibold text-slate-400 mb-2">
+            Full Description:
+          </p>
+          <div id="modal-content" class="text-slate-300 leading-relaxed text-base"></div>
+        </div>
+      </div>
 
-        // ------------------------------------
-        // 1. Project Data (Tags removed)
-        // ------------------------------------
-        const projects = [
-            {
-                id: 'cs50p',
-                title: 'Harvard CS50 Python Project',
-                summary: 'A console application featuring three classic games: Tic-Tac-Toe, Guess the Number, and Hangman, built with Python.',
-                content: 'To complete the CS50P course, I had to create a final project. The project had to include multiple files, a testing file using **pytest**, and a README written in Markdown with at least 1000 words explaining what the code does and how it works. For my project, I built a console application where users can choose between playing Tic Tac Toe (in two modes: against the computer or another player), Guess the Number, and Hangman. I used **exception handling** to manage user input errors, and I made it possible to exit the game at any time. This project gave me valuable experience with Python, and I really enjoyed building it.',
-                media: 'Video Demonstration Placeholder (Final Submission)'
-            },
-            {
-                id: 'clothes-rec',
-                title: 'Clothes Recommendation System',
-                summary: 'A team project in Intelligent Systems that uses the KMeans++ algorithm to provide clothing recommendations based on user input.',
-                content: 'In my third year of high school, I took an elective subject called Intelligent Systems. For the end-of-year project, we worked in a team to develop an intelligent system. Our system provided clothing recommendations based on user input. We trained it using a dataset, and it continued learning over time from user interactions and data, in addition to the original dataset. The system classified data using the **KMeans++ algorithm**. We also built a simple login system with username and password functionality, and designed a basic GUI using **Tkinter**. This was a great project to work on, I really enjoyed the teamwork and learning how to apply KMeans in a real application.',
-                media: 'Video Demonstration Placeholder (System Demo)'
-            },
-            {
-                id: 'kwk',
-                title: 'Kode with Klossy Data Science Project',
-                summary: 'A data analysis and visualization project focused on the environmental impact ("Fashion\'s Footprint") of fast fashion using Tableau.',
-                content: 'We worked in a team for our final Kode With Klossy project. We had to analyze data from online datasets of our choosing and visualize it to make it easier for people to interpret. Our project, named **"Fashion\'s Footprint"** focused on how fast fashion harms the environment. From CO2 emissions to waste in the oceans, we showcased the damage fast fashion causes through our dashboard, which included three visualizations, an introduction, and a data analysis. Created in **Tableau**, working on this dashboard helped us explore more of Tableau’s features and practice teamwork.',
-                media: 'Tableau Dashboard Visualization Placeholder'
-            },
-            {
-                id: '3d-design',
-                title: '3D Design of My Room with Blender',
-                summary: 'An end-of-semester project where I created a realistic 3D model of my room using Blender, including custom texture mapping.',
-                content: 'As part of the computer science course in my second year of high school, we studied 3D graphics and learned how to use **Blender**. For our end-of-semester project, we had to create a 3D model of our own room. I used photos of the actual materials in my room to recreate them as textures on the objects in the model. I also did some additional learning on my own to accurately model all the objects. Attached are photos showing the modeling process and a final rendered image of the room.',
-                media: '4 Image Placeholders (Modeling Process & Final Render)' 
-            },
-            {
-                id: 'art-portfolio',
-                title: 'Digital Art & Web Showcase',
-                summary: 'A responsive mini-website built using pure HTML/CSS to display a collection of my digital illustrations and design work.',
-                content: 'This project was a fun way to combine my love for design with web development basics. I used **HTML5** for structure and **CSS Grid/Flexbox** for a responsive layout that looks good on any device. While the actual art files aren\'t included here, the site demonstrates solid front-end skills. I focused on clean typography, accessibility, and smooth user navigation between different art categories. It was great practice in structuring a professional-looking portfolio site from scratch.',
-                media: 'Screenshot Placeholder (Website Layout)'
-            },
-            <!-- START OF NEW CARD DATA -->
-            {
-                id: 'biocomputers',
-                title: 'Biocomputers and DNA Programming Thesis',
-                summary: 'A co-authored, accepted thesis for a student science conference, covering the theory, ethical concerns, and a Python simulation of DNA computing.',
-                content: 'The Mathematical Union, the Programming Union, and the Ministry of Arts and Sciences organized a student science conference. To be invited, you had to submit a thesis on a topic in computer science or mathematics, with the computer science topic requiring the inclusion of code. If your thesis was accepted, you would be invited to present it in Ohrid. I am a co-author of a thesis that was accepted. A schoolmate and I wrote a paper on biocomputers, titled "**Biocomputers and DNA Programming: Using the Code of Life**." After introducing what biocomputers are and how they work (including paragraphs and code on **logic gates**), we explored potential applications of biocomputers and the ethical concerns surrounding them. We also wrote a **Python simulation** to demonstrate how a simple addition problem could be encoded in a biocomputer. We were inspired by the fact that this year marked the first time a biocomputer became commercially available. We are excited to see where technology will go with biocomputers. If you would like to see this certification, please contact me using the form on the Contact page.',
-                media: 'Thesis Document Placeholder (with Python Code Snippets)'
-            }
-            
-        ];
+      <div class="pt-4 border-t border-slate-700 text-center">
+        <button
+          onclick="closeModal()"
+          class="px-6 py-3 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition duration-300 shadow-md"
+        >
+          Close Details
+        </button>
+      </div>
+    </div>
+  </div>
 
-        // ------------------------------------
-        // 2. Rendering Functions (Tags removed)
-        // ------------------------------------
-        function renderProjects() {
-            const grid = document.getElementById('project-grid');
-            grid.innerHTML = projects.map(project => `
-                <div class="project-card p-6" onclick="showProjectDetails('${project.id}')">
-                    <h3 class="text-xl font-bold text-violet-400 mb-2">${project.title}</h3>
-                    <p class="text-slate-300 mb-4">${project.summary}</p>
-                </div>
-            `).join('');
-        }
+  <footer class="bg-slate-900 border-t border-slate-700 py-10 mt-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm text-slate-500">
+        &copy; <span id="current-year-proj"></span> Danka Jeftimova. Technical
+        Projects.
+      </p>
+    </div>
+  </footer>
 
-        // ------------------------------------
-        // 3. Modal Functions (Tags removed, 4-photo logic added)
-        // ------------------------------------
-        function showProjectDetails(projectId) {
-            const project = projects.find(p => p.id === projectId);
-            if (!project) return;
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("current-year-proj").textContent =
+      new Date().getFullYear();
+    renderProjects();
+  });
 
-            document.getElementById('modal-title').textContent = project.title;
-            document.getElementById('modal-content').innerHTML = project.content;
-            
-            const mediaContainer = document.getElementById('modal-media');
+  const projects = [
+    {
+      id: "cs50p",
+      title: "Harvard CS50 Python Project",
+      summary:
+        "A console-based Python app featuring custom-built versions of Tic-Tac-Toe, Guess the Number, and Hangman.",
+      content:
+        "For the final project of Harvard’s CS50P course, I designed a console application that includes three classic games: Tic Tac Toe, Guess the Number, and Hangman. I wrote all logic from scratch. The program runs entirely in the console and uses ASCII-based keyboard drawings to display the game board and symbols. It includes input validation, exception handling, and testing with pytest. This project strengthened my understanding of Python fundamentals and clean code practices.",
+      mediaType: "video",
+      mediaSrc: "videos/CS50P.mp4",
+    },
+    {
+      id: "clothes-rec",
+      title: "Clothes Recommendation System",
+      summary:
+        "An intelligent system built in Python that suggests clothing options using KMeans++ clustering and user input.",
+      content:
+        "This was a team project developed for our Intelligent Systems subject in school. The system allows users to register and log in, input clothing preferences such as brand, price, category, and color, and then receive recommendations based on KMeans++ clustering. We trained the algorithm on a Kaggle dataset and then tested its accuracy. A lightweight Tkinter interface was implemented for usability, though our focus was on building and optimizing the machine learning logic rather than the front end. The project taught me how to preprocess data, implement user authentication, and modify algorithms.",
+      mediaType: "video",
+      mediaSrc: "videos/vid.mp4",
+    },
+    {
+      id: "kwk",
+      title: "Kode with Klossy Data Science Project",
+      summary:
+        "A data visualization project titled “Fashion’s Footprint,” highlighting the environmental impact of fast fashion using Tableau.",
+      content:
+        "As part of the Kode with Klossy data science program, my team created an interactive Tableau dashboard called 'Fashion’s Footprint.' The project visualized the carbon emissions, water consumption, and textile waste generated by the fast fashion industry. We analyzed public datasets and designed dashboards that allow users to filter. My role included data cleaning, writing the introduction, and creating one of the interactive graphs. The project deepened my understanding of data storytelling.",
+      mediaType: "image",
+      mediaSrc: "images/vizz.png",
+    },
+    {
+      id: "3d-design",
+      title: "3D Design of My Room with Blender",
+      summary:
+        "A full 3D recreation of my room modeled entirely by hand, textured with real photos, and rendered in Blender.",
+      content:
+        "This project involved building a 3D model of my bedroom completely from scratch using Blender. I modeled every piece of furniture myself, adjusted the geometry, and applied photo-based textures for realism. This project helped me understand the artistic and technical sides of 3D modeling and rendering pipelines.",
+      mediaType: "images",
+      mediaSrc: [
+        "images/blender1.jpg",
+        "images/blender2.jpg",
+        "images/blender3.jpg",
+        "images/render.png",
+      ],
+    },
+    {
+      id: "art-portfolio",
+      title: "Personal Website Development",
+      summary:
+        "A responsive personal website built from scratch using HTML, CSS, and JavaScript to showcase my technical and creative work.",
+      content:
+        "I designed and developed this website by using HTML, CSS, and JavaScript. It features a fully responsive layout showcasing all of my achievements. This project allowed me to apply front-end concepts such as event handling and dynamic DOM manipulation. It also serves as a long-term portfolio platform to present my academic, technical, and creative projects online.",
+      mediaType: "image",
+      mediaSrc: "images/website_photo.png",
+    },
+    {
+      id: "biocomputers",
+      title: "Biocomputers and DNA Programming Thesis",
+      summary:
+        "A co-authored high school thesis exploring how biocomputers process information, including a Python simulation of DNA-based addition.",
+      content:
+        "This thesis, co-authored in high school, investigated how biocomputers could use DNA molecules to perform logical and arithmetic operations. I contributed by writing a Python simulation that visualized how a biological computer would process data and execute addition through molecular logic gates. The research also discussed the ethical, social, and technological implications of DNA-based computation. Our thesis was officially recognized by the Macedonian Academy of Sciences and Arts, the Association of Computer Scientists of Macedonia, and the Union of Mathematicians of Macedonia.",
+      mediaType: "image",
+      mediaSrc: "images/original_code.png",
+    },
+  ];
 
-            // Logic to handle 4 photo placeholders for the Blender project
-            if (projectId === '3d-design') {
-                mediaContainer.classList.remove('media-placeholder');
-                mediaContainer.classList.add('p-0'); // Remove default padding for better grid spacing
-                mediaContainer.innerHTML = `
-                    <div class="grid grid-cols-2 grid-rows-2 gap-2 w-full h-full">
-                        <div class="media-placeholder !min-h-0 aspect-square text-xs p-1">Photo 1: Wireframe/Modeling</div>
-                        <div class="media-placeholder !min-h-0 aspect-square text-xs p-1">Photo 2: Texture Map Preview</div>
-                        <div class="media-placeholder !min-h-0 aspect-square text-xs p-1">Photo 3: Intermediate Render</div>
-                        <div class="media-placeholder !min-h-0 aspect-square text-xs p-1">Photo 4: Final Render</div>
-                    </div>
-                `;
-            } else {
-                // Default placeholder for other projects
-                mediaContainer.classList.add('media-placeholder');
-                mediaContainer.classList.remove('p-0');
-                mediaContainer.innerHTML = project.media;
-            }
+  function renderProjects() {
+    const grid = document.getElementById("project-grid");
+    grid.innerHTML = projects
+      .map(
+        (project) => `
+        <div class="project-card p-6" onclick="showProjectDetails('${project.id}')">
+            <h3 class="text-xl font-bold text-violet-400 mb-2">${project.title}</h3>
+            <p class="text-slate-300 mb-4">${project.summary}</p>
+        </div>`
+      )
+      .join("");
+  }
 
+  function showProjectDetails(projectId) {
+    const project = projects.find((p) => p.id === projectId);
+    if (!project) return;
 
-            // Show modal
-            const modal = document.getElementById('project-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
+    document.getElementById("modal-title").textContent = project.title;
+    document.getElementById("modal-content").innerHTML = project.content;
 
-        function closeModal(event) {
-            // Check if the click originated from the backdrop (optional)
-            if (event && event.target.id !== 'project-modal') return;
-            
-            const modal = document.getElementById('project-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
+    const mediaContainer = document.getElementById("modal-media");
+    mediaContainer.innerHTML = "";
+    mediaContainer.classList.remove("media-placeholder", "p-0");
 
-    </script>
+    if (project.mediaType === "video") {
+      mediaContainer.innerHTML = `
+        <video controls class="rounded-lg w-full h-auto">
+            <source src="${project.mediaSrc}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>`;
+    } else if (project.mediaType === "image") {
+      mediaContainer.innerHTML = `
+        <img src="${project.mediaSrc}" alt="${project.title}" class="rounded-lg w-full h-auto">`;
+    } else if (project.mediaType === "images" && Array.isArray(project.mediaSrc)) {
+      mediaContainer.classList.add("p-0");
+      mediaContainer.innerHTML = `
+        <div class="grid grid-cols-2 grid-rows-2 gap-2 w-full h-full">
+            ${project.mediaSrc
+              .map(
+                (src) =>
+                  `<img src="${src}" alt="Project image" class="rounded-lg w-full h-auto object-cover">`
+              )
+              .join("")}
+        </div>`;
+    } else {
+      mediaContainer.classList.add("media-placeholder");
+      mediaContainer.textContent = "No media available for this project.";
+    }
+
+    const modal = document.getElementById("project-modal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function closeModal(event) {
+    if (event && event.target.id !== "project-modal") return;
+    const modal = document.getElementById("project-modal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+</script>
 
 </body>
 </html>
