@@ -60,6 +60,72 @@
     .media-grid-container {
       height: 100%;
     }
+
+    .project-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+}
+
+.project-content {
+    flex: 1;
+    padding: 30px;
+    min-width: 300px;
+}
+
+.project-image {
+    flex: 1;
+    min-width: 300px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.tech-stack {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.tech-stack li {
+    background: #f0f2f5;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.btn-github {
+    display: inline-block;
+    margin-top: 10px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #24292e;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-github:hover {
+    background: #24292e;
+    color: white;
+}
   </style>
 </head>
 <body>
@@ -145,6 +211,34 @@
       </div>
     </div>
   </div>
+
+  <div class="project-card">
+    <div class="project-content">
+        <h3>STAR - Learning Management System</h3>
+        <p>
+            A robust educational platform built with <strong>Python and Django</strong>, 
+            leveraging the <strong>MVT (Model-View-Template)</strong> architecture for 
+            seamless data handling and server-side rendering.
+        </p>
+        
+        <ul class="tech-stack">
+            <li>Python / Django</li>
+            <li>Google Gemini API Integration</li>
+            <li>PostgreSQL</li>
+            <li>Bootstrap / CSS</li>
+        </ul>
+
+        <div class="project-links">
+            <a href="https://github.com/DankaJeftimova/STAR" target="_blank" class="btn-github">
+                View on GitHub
+            </a>
+        </div>
+    </div>
+
+    <div class="project-image">
+        <img src="path-to-your-image.jpg" alt="STAR LMS Interface Preview">
+    </div>
+</div>
 
   <footer class="bg-slate-900 border-t border-slate-700 py-10 mt-12">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
